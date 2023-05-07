@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- This is the Manifest file that contains information about the app such as its name, package name, permissions, and activities. -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.tensorflow.lite.examples.smartreply">
 
+  <!-- The main activity of the app and various app attributes. -->
   <application
       android:allowBackup="true"
       android:icon="@mipmap/ic_launcher"
@@ -10,11 +12,13 @@
       android:theme="@style/AppTheme.SmartReply"
       android:roundIcon="@mipmap/ic_launcher_round">
 
+    <!-- The main activity of the app. -->
     <activity
         android:name=".MainActivity"
         android:configChanges="orientation|keyboardHidden|screenSize"
         android:windowSoftInputMode="adjustResize"
         android:screenOrientation="portrait">
+       <!-- The intent-filter tag specifies how the activity should be launched when the app is started. -->
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
         <category android:name="android.intent.category.LAUNCHER"/>
