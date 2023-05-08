@@ -1,22 +1,24 @@
-
+// Specifies the repositories where Gradle can find the dependencies to build the project
+// The 'google()' and 'mavenCentral()' repositories are included by default.
 buildscript {
-
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
+        // Classpath for the Android Gradle plugin, which is required to build an Android app.
         classpath 'com.android.tools.build:gradle:4.2.0'
+        // Classpath for the Gradle download task plugin, which is used to download files during the build process.
         classpath 'de.undercouch:gradle-download-task:4.0.2'
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
     }
 }
 
+// Specifies the repositories where Gradle can find the dependencies for all projects in the build.
 allprojects {
     repositories {
         google()
         mavenCentral()
+        // Specifies a custom repository for the snapshot builds of a library.
         maven {
             name 'ossrh-snapshot'
             url 'https://oss.sonatype.org/content/repositories/snapshots'
@@ -24,6 +26,7 @@ allprojects {
     }
 }
 
+// Specifies a task to delete the build directory when the 'clean' task is executed.
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
