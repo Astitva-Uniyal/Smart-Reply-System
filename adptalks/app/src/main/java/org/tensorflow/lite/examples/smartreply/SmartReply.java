@@ -4,8 +4,6 @@ import androidx.annotation.Keep;
 
 /**
  * SmartReply contains predicted message, and confidence.
- *
- * <p>NOTE: this class used by JNI, class name and constructor should not be obfuscated.
  */
 @Keep
 public class SmartReply {
